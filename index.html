@@ -1,0 +1,42 @@
+---
+layout: default
+---
+
+<div class="home">
+
+  <div>
+    {% for post in paginator.posts %}
+      <div>
+        <span class="post-title  pull-left">
+            <a href="{{ post.url | prepend: site.baseurl }}">
+                {{ post.title }}
+            </a>
+        </span>
+        <span class="post-date  pull-right">
+            <time>{{ post.date | date: '%B %d, %Y '}}</time>
+        </span>
+        <div style="clear:both"></div>
+      </div>
+    {% endfor %}
+  </div>
+
+  <br>
+
+  <div class="paginator">
+
+    {% if paginator.previous_page %}
+      <a href="{{ paginator.previous_page_path }}" class="previous"><i class="glyphicon glyphicon-chevron-left"></i></a>
+      {% else %}
+      <span class="previous"><i class="glyphicon glyphicon-chevron-left"></i></span>
+    {% endif %}
+      <span class="page_number "> {{ paginator.page }} / {{ paginator.total_pages }}</span>
+
+    {% if paginator.next_page %}
+      <a href="{{ paginator.next_page_path }}" class="next"><i class="glyphicon glyphicon-chevron-right"></i></a>
+      {% else %}
+      <span class="next "><i class="glyphicon glyphicon-chevron-right"></i></span>
+    {% endif %}
+
+  </div>
+
+</div>

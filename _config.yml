@@ -1,0 +1,6 @@
+title: Developer Blog
+baseurl: ""
+markdown: kramdown
+gems: ['jekyll-paginate']
+paginate: 5
+paginate_path: "/page:num/"

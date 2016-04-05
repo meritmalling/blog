@@ -1,0 +1,17 @@
+---
+layout: default
+---
+<article>
+
+  <header>
+    <h4>{{ page.title }}</h4>
+    <h5>{{ page.date | date: "%A, %B %-d, %Y" }}</h5>
+    {% include graphs.html %}
+  </header>
+
+  <div>
+    <br>
+    {{ content }}
+  </div>
+
+</article>
