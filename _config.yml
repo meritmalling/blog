@@ -1,5 +1,5 @@
 title: Developer Blog
-baseurl: ""
+baseurl: "merittrompeter.github.io/blog"
 markdown: kramdown
 gems: ['jekyll-paginate']
 paginate: 5
