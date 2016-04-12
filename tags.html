@@ -4,17 +4,21 @@ layout: default
 
 <h1 class="text-center">Tags</h1>
 
-<div id="MainMenu">
-  <div class="list-group panel">
-  {% for tag in site.tags %}
-    <a href="#{{ tag[0] }}" class="list-group-item" data-toggle="collapse" data-parent="#MainMenu">{{ tag[0] | replace: "-", " " }} ({{ tag[1].size }})</a>
-      <div class="collapse" id="{{ tag[0] }}">
-      {% for post in site.posts %}
-        {% if post.tags contains tag[0] %}
-          <a href="{{ post.url }}"  class="list-group-item">{{ post.title }} • {{ post.date | date: "%A, %B %-d"}}</a>
-        {% endif %}
-      {% endfor %}
+<div class="home">
+
+  <div id="MainMenu">
+    <div class="list-group panel">
+    {% for tag in site.tags %}
+      <a href="#{{ tag[0] }}" class="list-group-item" data-toggle="collapse" data-parent="#MainMenu">{{ tag[0] | replace: "-", " " }} ({{ tag[1].size }})</a>
+        <div class="collapse" id="{{ tag[0] }}">
+        {% for post in site.posts %}
+          {% if post.tags contains tag[0] %}
+            <a href="{{ post.url }}"  class="list-group-item">{{ post.title }} • {{ post.date | date: "%A, %B %-d"}}</a>
+          {% endif %}
+        {% endfor %}
+      </div>
+    {% endfor %}
     </div>
-  {% endfor %}
   </div>
+
 </div>

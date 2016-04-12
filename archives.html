@@ -4,6 +4,7 @@ layout: default
 
 <h1 class="text-center">Archives</h1>
 
+<div class="home">
 <!-- Capture & Assign Variables Used In Menu -->
 
     <!-- Months Array -->
@@ -23,54 +24,56 @@ layout: default
     {% assign latestyear = latestyear | times: 1 %}
     {% assign latestmonthint = latestmonthint | times: 1 %}
 
-<div id="MainMenu">
-  <div class="list-group panel">
-  <!-- Loop Through Years -->
-    {% for year in (firstyear..latestyear) reversed %}
-      {% assign year = year | times: 1 %}
+  <div id="MainMenu">
+    <div class="list-group panel">
+    <!-- Loop Through Years -->
+      {% for year in (firstyear..latestyear) reversed %}
+        {% assign year = year | times: 1 %}
 
-    <a href="#{{ year }}" class="list-group-item" data-toggle="collapse" data-parent="#MainMenu">{{ year }}</a>
-    <div class="collapse" id="{{ year }}">
+      <a href="#{{ year }}" class="list-group-item" data-toggle="collapse" data-parent="#MainMenu">{{ year }}</a>
+      <div class="collapse" id="{{ year }}">
 
-        <!-- Loop Through Months -->
-        {% for month in (months) %}
+          <!-- Loop Through Months -->
+          {% for month in (months) %}
 
-          {% assign counter = 0 %}
-            <!-- Get Count of Posts This Month -->
-            {% for post in site.posts %}
+            {% assign counter = 0 %}
+              <!-- Get Count of Posts This Month -->
+              {% for post in site.posts %}
 
-              {% assign postyear = post.date | date: "%Y" | times: 1 %}
-              {% assign postmonth = post.date | date: "%B"%}
+                {% assign postyear = post.date | date: "%Y" | times: 1 %}
+                {% assign postmonth = post.date | date: "%B"%}
 
-              {% if year == postyear and month == postmonth %}
-                {% assign counter = counter | plus: 1 %}
-              {% endif %}
+                {% if year == postyear and month == postmonth %}
+                  {% assign counter = counter | plus: 1 %}
+                {% endif %}
 
-              {% if forloop.index == site.posts.size and counter > 0 %}
-                <a href="#{{ month }}" class="list-group-item" data-toggle="collapse" data-parent="#{{ year }}">{{ month }} ({{counter}})</a>
-                <div class="collapse" id="{{ month }}">
-              {% endif %}
+                {% if forloop.index == site.posts.size and counter > 0 %}
+                  <a href="#{{ month }}" class="list-group-item" data-toggle="collapse" data-parent="#{{ year }}">{{ month }} ({{counter}})</a>
+                  <div class="collapse" id="{{ month }}">
+                {% endif %}
 
-            {% endfor %}
+              {% endfor %}
 
-            {% for post in site.posts %}
+              {% for post in site.posts %}
 
-              {% assign postyear = post.date | date: "%Y" | times: 1 %}
-              {% assign postmonth = post.date | date: "%B"%}
+                {% assign postyear = post.date | date: "%Y" | times: 1 %}
+                {% assign postmonth = post.date | date: "%B"%}
 
-              {% if year == postyear and month == postmonth %}
-                <a href="{{ post.url }}"  class="list-group-item"> {{ post.title }} • {{ post.date | date: "%A, %B %-d"}} </a>
-              {% endif %}
-              {% if forloop.index == site.posts.size and counter > 0 %}
-                </div>
-              {% endif %}
+                {% if year == postyear and month == postmonth %}
+                  <a href="{{ post.url }}"  class="list-group-item"> {{ post.title }} • {{ post.date | date: "%A, %B %-d"}} </a>
+                {% endif %}
+                {% if forloop.index == site.posts.size and counter > 0 %}
+                  </div>
+                {% endif %}
 
-            {% endfor %}
+              {% endfor %}
 
-        {% endfor %} <!-- Close Month Loop -->
+          {% endfor %} <!-- Close Month Loop -->
 
-      </div>
+        </div>
 
-    {% endfor %} <!-- Close Year Loop -->
+      {% endfor %} <!-- Close Year Loop -->
+    </div>
   </div>
+
 </div>
