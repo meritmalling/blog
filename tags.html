@@ -13,7 +13,7 @@ layout: default
         <div class="collapse" id="{{ tag[0] }}">
         {% for post in site.posts %}
           {% if post.tags contains tag[0] %}
-            <a href="{{ post.url }}"  class="list-group-item">{{ post.title }} • {{ post.date | date: "%A, %B %-d"}}</a>
+            <a href="{{ post.url | prepend: site.github.url }}"  class="list-group-item">{{ post.title }} • {{ post.date | date: "%A, %B %-d"}}</a>
           {% endif %}
         {% endfor %}
       </div>
