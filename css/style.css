@@ -22,7 +22,7 @@ body {
 }
 
 .home {
-  width: 50%;
+  width: 70%;
   margin: 0 auto;
 }
 
@@ -31,11 +31,15 @@ body {
   text-decoration: none;
 }
 
-.post-title {
+.menu div {
+  display: inline;
+}
+
+#post-title {
   text-align: left;
 }
 
-.post-date {
+#post-date {
   text-align: right;
 }
 
@@ -58,4 +62,14 @@ body {
   height: 150px;
   clear:both;
   padding-top:20px;
+}
+
+@media (min-width: 1000px) {
+  .home { width: 50%; }
+}
+
+@media (max-width: 600px) {
+  .menu div { display: block; }
+  #post-date { display: none; }
+  #post-title { text-align: center; }
 }
