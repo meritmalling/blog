@@ -66,6 +66,10 @@ body {
   padding-top:20px;
 }
 
+p {
+  margin: 0;
+}
+
 @media (max-width: 600px) {
   .menu div { display: block; }
   #post-date { display: none; }
