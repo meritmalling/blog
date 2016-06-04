@@ -12,9 +12,9 @@ To identify the holder of a certificate, each certificate contains certain infor
 
 ###Certificate Authorities
 
-Like any identifying document certificates are issued by a trusted agency, these are called Certificate Authorities. Certificate authorities both certify individual identities and issue certificates that allow other parties to verify they are indeed who they claim to be.
+Like any identifying document certificates are issued by a trusted agency, these are called Certificate Authorities. Certificate Authorities both certify individual identities and issue certificates that allow other entities to verify they are indeed who they claim to be.
 
-Certificate authorities can be anyone. Any organization that needs to identify a specified group of callers can create it's own authority to verify those callers. There are also third party vendors that are in the business of issuing certificates (Digicert, Entrust, etc.)
+Certificate authorities can be anyone. Any organization that needs to identify callers can create it's own authority to verify those callers. There are also third party vendors that are in the business of issuing certificates (Digicert, Entrust, etc.)
 
 ###Encryption:
 
