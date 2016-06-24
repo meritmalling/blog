@@ -2,6 +2,9 @@
 layout: post
 title:  DevOps Days
 date:   2016-05-21
+tags:
+  - conference
+  - devops
 ---
 
 ### DevOps Days Seattle 2016
