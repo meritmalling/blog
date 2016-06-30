@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  Certificates Part One
+title:  Server & Mutual Handshakes
 date:   2016-05-21
 ---
 
